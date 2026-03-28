@@ -1,0 +1,4 @@
+FROM docker.io/zacharywin/sealaf:latest
+COPY appcr.yaml.tmpl manifests/appcr.yaml.tmpl
+COPY mongodb.yaml.tmpl manifests/mongodb.yaml.tmpl
+COPY registry registry
