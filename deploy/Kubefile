@@ -1,4 +1,7 @@
-FROM docker.io/zacharywin/sealaf:latest
-COPY appcr.yaml.tmpl manifests/appcr.yaml.tmpl
-COPY mongodb.yaml.tmpl manifests/mongodb.yaml.tmpl
-COPY registry registry
+FROM --platform=$BUILDPLATFORM scratch
+ARG TARGETARCH
+
+COPY install.sh install.sh
+COPY charts charts
+
+CMD ["bash install.sh"]
